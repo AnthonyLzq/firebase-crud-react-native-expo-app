@@ -1,7 +1,10 @@
 import React from 'react'
 import { Button, ScrollView, StyleSheet, TextInput, View } from 'react-native'
+import Toast from 'react-native-root-toast'
 
 import { ICreateUserState } from '../interfaces'
+import { toastOptions } from '../utils'
+import { db } from '../database/firebase'
 
 const classes = StyleSheet.create({
   container: {
@@ -29,6 +32,33 @@ const CreateUser = () => {
     value       : string
   ): void => setUser({ ...user, [propertyName]: value ?? '' })
 
+  const saveNewUser = async () => {
+    if (!user.name) {
+      Toast.show('Name is missing!', toastOptions())
+
+      return
+    }
+
+    if (!user.email) {
+      Toast.show('Email is missing!', toastOptions())
+
+      return
+    }
+
+    if (!user.phone) {
+      Toast.show('Phone is missing!', toastOptions())
+
+      return
+    }
+
+    try {
+      await db.collection('users').add({ ...user })
+      Toast.show('User saved!', toastOptions())
+    } catch (error) {
+      Toast.show('Ups! Something went wrong. Please, try again', toastOptions())
+    }
+  }
+
   return (
     <ScrollView style={classes.container}>
       <View style={classes.inputGroup}>
@@ -51,7 +81,7 @@ const CreateUser = () => {
       </View>
       <View style={{ paddingTop: 10 }}>
         <Button
-          onPress={() => console.log({ user})}
+          onPress={saveNewUser}
           title='Save user'
         />
       </View>

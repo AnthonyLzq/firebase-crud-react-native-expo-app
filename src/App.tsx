@@ -1,5 +1,8 @@
 import React from 'react'
+import { LogBox } from 'react-native'
 import { createStackNavigator } from '@react-navigation/stack'
+
+LogBox.ignoreLogs(['Setting a timer'])
 
 import UsersList from './screens/UsersList'
 import CreateUser from './screens/CreateUser'
