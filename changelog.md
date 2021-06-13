@@ -1,5 +1,12 @@
 # React Native Firebase App with Expo
 
+## Version 0.4.0
+  - Implemented:
+    - Validation to check whether the user exists in the database.
+    - Appropriated validation for the inputs.
+    - Loading screen while the validation is being performed.
+    - Blocking inputs and button while the validation is being performed.
+
 ## Version 0.3.0
   - Implemented:
     - `Toast` messages to validate the user input, a basic one.
