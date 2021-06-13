@@ -1,5 +1,10 @@
 # React Native Firebase App with Expo
 
+## Version 1.0.0
+  - Implemented:
+    - Refactoring UserDetail screen, now a user can be deleted and updated.
+    - New titles for each screen.
+
 ## Version 0.6.0
   - Implemented:
     - UserDetail screen, with its UI and logic.

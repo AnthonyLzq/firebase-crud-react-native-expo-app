@@ -12,16 +12,26 @@ const Stack = createStackNavigator()
 
 const MyStack = () => (
   <Stack.Navigator>
-    <Stack.Screen name='UsersList' component={UsersList} />
-    <Stack.Screen name='CreateUser' component={CreateUser} />
-    <Stack.Screen name='UserDetail' component={UserDetail} />
+    <Stack.Screen
+      name='UsersList'
+      component={UsersList}
+      options={{ title: 'Users list' }}
+    />
+    <Stack.Screen
+      name='CreateUser'
+      component={CreateUser}
+      options={{ title: 'Register a new user' }}
+    />
+    <Stack.Screen
+      name='UserDetail'
+      component={UserDetail}
+      options={{ title: 'User detail' }}
+    />
   </Stack.Navigator>
 )
 
-const App = () => {
-  return (
-    <MyStack />
-  )
-}
+const App = () => (
+  <MyStack />
+)
 
 export default App

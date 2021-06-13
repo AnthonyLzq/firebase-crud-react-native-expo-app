@@ -36,4 +36,6 @@ const emptyUser: IUser = {
   phone: ''
 }
 
-export { RE_EMAIL, RE_PHONE, emptyUser, toastOptions }
+const SPINNER_COLOR = '#222'
+
+export { RE_EMAIL, RE_PHONE, SPINNER_COLOR, emptyUser, toastOptions }

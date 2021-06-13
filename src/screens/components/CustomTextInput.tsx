@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet, TextInput, View } from 'react-native'
 
 interface ICustomTextInputProps {
-  isEditable   : boolean
+  isEditable?  : boolean
   onChangeText : (text: string) => void
   placeHolder  : string
   value        : string
@@ -20,7 +20,7 @@ const classes = StyleSheet.create({
 })
 
 const CustomTextInput = ({
-  isEditable,
+  isEditable = true,
   onChangeText,
   placeHolder,
   value,

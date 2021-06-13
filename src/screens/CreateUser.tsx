@@ -5,11 +5,15 @@ import Toast from 'react-native-root-toast'
 
 import CustomTextInput from './components/CustomTextInput'
 import { IUser } from '../interfaces'
-import { RE_EMAIL, RE_PHONE, emptyUser, toastOptions } from '../utils'
+import {
+  RE_EMAIL,
+  RE_PHONE,
+  SPINNER_COLOR,
+  emptyUser,
+  toastOptions
+} from '../utils'
 import { db } from '../database/firebase'
 import { CreateUserNavigationProp } from '../types/props'
-
-const SPINNER_COLOR = '#222'
 
 const classes = StyleSheet.create({
   container: {
