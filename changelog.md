@@ -1,5 +1,11 @@
 # React Native Firebase App with Expo
 
+## Version 0.5.0
+  - Implemented:
+    - UserList screen, with its UI and logic.
+    - Navigation from UsersList to CreateUser and UserDetail.
+    - Props type for the navigation.
+
 ## Version 0.4.0
   - Implemented:
     - Validation to check whether the user exists in the database.

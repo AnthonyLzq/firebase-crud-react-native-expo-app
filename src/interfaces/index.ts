@@ -1,4 +1,5 @@
-interface ICreateUserState {
+interface IUser {
+  id?  : string
   name : string
   email: string
   phone: string
@@ -18,4 +19,4 @@ interface IToastGenerator {
   onPress?    : () => void
 }
 
-export { ICreateUserState, IToastGenerator }
+export { IUser, IToastGenerator }

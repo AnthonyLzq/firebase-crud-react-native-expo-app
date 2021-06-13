@@ -12,9 +12,9 @@ const Stack = createStackNavigator()
 
 const MyStack = () => (
   <Stack.Navigator>
-    <Stack.Screen name='CreateUser' component={CreateUser} />
     <Stack.Screen name='UsersList' component={UsersList} />
-    <Stack.Screen name='UsUserDetailerList' component={UserDetail} />
+    <Stack.Screen name='CreateUser' component={CreateUser} />
+    <Stack.Screen name='UserDetail' component={UserDetail} />
   </Stack.Navigator>
 )
 

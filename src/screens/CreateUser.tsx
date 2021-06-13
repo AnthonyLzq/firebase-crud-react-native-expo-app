@@ -4,9 +4,10 @@ import Spinner from 'react-native-loading-spinner-overlay'
 import Toast from 'react-native-root-toast'
 
 import CustomTextInput from './components/CustomTextInput'
-import { ICreateUserState } from '../interfaces'
+import { IUser } from '../interfaces'
 import { RE_EMAIL, RE_PHONE, toastOptions } from '../utils'
 import { db } from '../database/firebase'
+import Props from '../types/props'
 
 const SPINNER_COLOR = '#222'
 
@@ -20,14 +21,14 @@ const classes = StyleSheet.create({
   }
 })
 
-const emptyUser: ICreateUserState = {
+const emptyUser: IUser = {
   name : '',
   email: '',
   phone: ''
 }
 
-const CreateUser = () => {
-  const [user, setUser] = React.useState<ICreateUserState>(emptyUser)
+const CreateUser = ({ navigation }: Props) => {
+  const [user, setUser] = React.useState<IUser>(emptyUser)
   const [isEditable, setIsEditable] = React.useState(true)
   const [isDisable, setIsDisable] = React.useState(false)
   const [isLoading, setIsLoading] = React.useState(false)
@@ -50,18 +51,10 @@ const CreateUser = () => {
   const handleChangeText = (
     propertyName: 'name' | 'email' | 'phone',
     value       : string
-  ): void => {
-    if (propertyName === 'name')
-      setUser({
-        ...user,
-        [propertyName]: value ? value : ''
-      })
-    else
-      setUser({
-        ...user,
-        [propertyName]: value ? value.toLocaleLowerCase() : ''
-      })
-  }
+  ): void => setUser({
+    ...user,
+    [propertyName]: value ? value : ''
+  })
 
   const showToastAndEnableInputAndButton = (message: string): void => {
     Toast.show(message, toastOptions())
@@ -132,6 +125,7 @@ const CreateUser = () => {
       Toast.show('User saved!', toastOptions())
       setUser(emptyUser)
       returnTextInputAndButtonToTheirInitialValue()
+      navigation.navigate('UsersList')
     } catch (error) {
       Toast.show('Ups! Something went wrong. Please, try again', toastOptions())
     }
