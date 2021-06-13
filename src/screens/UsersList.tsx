@@ -3,7 +3,7 @@ import { Button, ScrollView, StyleSheet, View } from 'react-native'
 import { Avatar, ListItem } from 'react-native-elements'
 
 import { ACECOM_WD } from '@env'
-import Props from '../types/props'
+import { UsersListNavigationProp } from '../types/props'
 import { IUser } from '../interfaces'
 import { db } from '../database/firebase'
 
@@ -14,7 +14,7 @@ const classes = StyleSheet.create({
   }
 })
 
-const UsersList = ({ navigation }: Props) => {
+const UsersList = ({ navigation }: UsersListNavigationProp) => {
   const [users, setUsers] = React.useState<IUser[]>([])
 
   React.useEffect(() => {

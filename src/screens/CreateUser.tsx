@@ -5,9 +5,9 @@ import Toast from 'react-native-root-toast'
 
 import CustomTextInput from './components/CustomTextInput'
 import { IUser } from '../interfaces'
-import { RE_EMAIL, RE_PHONE, toastOptions } from '../utils'
+import { RE_EMAIL, RE_PHONE, emptyUser, toastOptions } from '../utils'
 import { db } from '../database/firebase'
-import Props from '../types/props'
+import { CreateUserNavigationProp } from '../types/props'
 
 const SPINNER_COLOR = '#222'
 
@@ -21,13 +21,7 @@ const classes = StyleSheet.create({
   }
 })
 
-const emptyUser: IUser = {
-  name : '',
-  email: '',
-  phone: ''
-}
-
-const CreateUser = ({ navigation }: Props) => {
+const CreateUser = ({ navigation }: CreateUserNavigationProp) => {
   const [user, setUser] = React.useState<IUser>(emptyUser)
   const [isEditable, setIsEditable] = React.useState(true)
   const [isDisable, setIsDisable] = React.useState(false)

@@ -1,11 +1,26 @@
-import { StackScreenProps } from '@react-navigation/stack';
+import { RouteProp } from '@react-navigation/native'
+import { StackNavigationProp } from '@react-navigation/stack'
 
 type RootStackParamList = {
-  CreateUser: undefined
   UsersList : undefined
+  CreateUser: undefined
   UserDetail: { id: string }
 }
 
-type Props = StackScreenProps<RootStackParamList>
+type UsersListNavigationProp = {
+  navigation: StackNavigationProp<RootStackParamList, 'UsersList'>
+}
 
-export default Props
+type UserDetailRouteProp = {
+  route: RouteProp<RootStackParamList, 'UserDetail'>
+}
+
+type CreateUserNavigationProp = {
+  navigation: StackNavigationProp<RootStackParamList, 'CreateUser'>
+}
+
+export {
+  UsersListNavigationProp,
+  UserDetailRouteProp,
+  CreateUserNavigationProp
+}

@@ -1,5 +1,10 @@
 # React Native Firebase App with Expo
 
+## Version 0.6.0
+  - Implemented:
+    - UserDetail screen, with its UI and logic.
+    - Refactoring the props for each screen.
+
 ## Version 0.5.0
   - Implemented:
     - UserList screen, with its UI and logic.

@@ -38,7 +38,7 @@
   "private": true,
   "name": "react-native-firebase-expo",
   "description": "React Native Firebase App with Expo",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AnthonyLzq/react-native-firebase-app.git"

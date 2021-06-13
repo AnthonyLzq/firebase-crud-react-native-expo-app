@@ -1,5 +1,5 @@
 import Toast, { ToastOptions } from 'react-native-root-toast'
-import { IToastGenerator } from '../interfaces'
+import { IToastGenerator, IUser } from '../interfaces'
 
 const RE_EMAIL = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
 const RE_PHONE = /^\+(?:[0-9] ?){6,14}[0-9]$/
@@ -30,4 +30,10 @@ const toastOptions = ({
   onPress
 })
 
-export { RE_EMAIL, RE_PHONE, toastOptions }
+const emptyUser: IUser = {
+  name : '',
+  email: '',
+  phone: ''
+}
+
+export { RE_EMAIL, RE_PHONE, emptyUser, toastOptions }
